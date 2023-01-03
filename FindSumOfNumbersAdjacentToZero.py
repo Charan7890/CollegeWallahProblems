@@ -68,16 +68,23 @@ def main(m,n,l):
                     break
                 
                 
-                # bottom & top center cases
+                # bottom & top, left & right center cases
                 elif i==0:
-                    ans = l[i][j-1]+l[i][j+1]+l[i+1][j]
+                    ans = l[i][j-1] + l[i][j+1] + l[i+1][j]
                     fg = 0
                     break
                 elif i==m-1:
                     ans = l[i-1][j] + l[i][j-1] + l[i][j+1]
                     fg = 0
                     break
-                
+                elif j==0:
+                    ans = l[i-1][j] + l[i+1][j] + l[i][j+1]
+                    fg = 0
+                    break
+                elif j==n-1:
+                    ans = l[i-1][j] + l[i+1][j] + l[i][j-1]
+                    fg = 0
+                    break
                 
                 #middle matrix
                 if i>0 and j>0:
